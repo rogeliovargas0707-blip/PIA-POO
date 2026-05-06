@@ -1,4 +1,6 @@
-#En este archivo se lanza el programa, se centraliza todo aqui
+"""
+Main del programa. Aqui se debe ejecutar el programa.
+"""
 
 import logging
 from pathlib import Path
