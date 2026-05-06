@@ -24,7 +24,7 @@ def _configurar_logging(nivel: int = logging.INFO) -> None:
         format=formato,
         handlers=[
             logging.FileHandler(log_path, encoding="utf-8"),
-            logging.StreamHandler(),  # usa stderr por defecto
+            logging.StreamHandler()
         ],
     )
     logging.getLogger(__name__).info("Logging inicializado. Archivo: %s", log_path)
@@ -52,7 +52,7 @@ def main() -> None:
         logger.exception("Error fatal no controlado: %s", e)
         print(f"\n  ERROR CRÍTICO: {e}")
         print("  Revisa libreria_acme.log para más detalles.")
-        raise SystemExit(1)   # ← reemplazo de sys.exit(1)
+        raise SystemExit(1)
     finally:
         db.cerrar()
         logger.info("=== Librería ACME finalizada ===")
